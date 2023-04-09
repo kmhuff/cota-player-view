@@ -1,0 +1,2849 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.5" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<title>Corridors of the Ark — An open table megadungeon adventure for D&D 5e</title>
+<div id="styleArea">
+<style data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" type="text/css">/*
+Basic styles used before we boot up the parsing engine
+*/
+
+/*
+Error message and password prompt
+*/
+
+.tc-error-form {
+	font-family: sans-serif;
+	color: #fff;
+	z-index: 20000;
+	position: fixed;
+	background-color: rgb(255, 75, 75);
+	border: 8px solid rgb(255, 0, 0);
+	border-radius: 8px;
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 4em;
+	padding: 0 2em 1em 2em;
+}
+
+.tc-error-form h1 {
+	text-align: center;
+}
+
+.tc-error-prompt {
+	text-align: center;
+	color: #000;
+}
+
+.tc-error-message {
+	overflow: auto;
+	max-height: 40em;
+	padding-right: 1em;
+	margin: 1em 0;
+	white-space: pre-line;
+}
+
+.tc-password-wrapper {
+    font-family: sans-serif;
+	z-index: 20000;
+	position: fixed;
+	text-align: center;
+	width: 200px;
+	top: 4em;
+	left: 50%;
+	margin-left: -144px; /* - width/2 - paddingHorz/2 - border */
+	padding: 16px 16px 16px 16px;
+	border-radius: 8px;
+}
+
+.tc-password-wrapper {
+	color: #000;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: rgb(197, 235, 183);
+	border: 8px solid rgb(164, 197, 152);
+}
+
+.tc-password-wrapper form {
+	text-align: left;
+}
+
+.tc-password-wrapper h1 {
+	font-size: 16px;
+	line-height: 20px;
+	padding-bottom: 16px;
+}
+
+.tc-password-wrapper input {
+	width: 100%;
+}
+</style>
+</div>
+<style type="text/css">
+.tc-sidebar-header {
+	text-shadow: 0 1px 0 transparent;
+}.tc-tiddler-info {
+	
+  -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+     -moz-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+          box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+
+}@media screen {
+	.tc-tiddler-frame {
+		
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+	}
+}@media (max-width: 959px) {
+	.tc-tiddler-frame {
+		
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
+	}
+}.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {
+	
+  -webkit-transition: fill 150ms ease-in-out;
+     -moz-transition: fill 150ms ease-in-out;
+          transition: fill 150ms ease-in-out;
+
+}.tc-tiddler-controls button.tc-selected,
+.tc-page-controls button.tc-selected {
+	
+  -webkit-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+     -moz-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+          filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame select.tc-edit-texteditor {
+	
+  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-edit-tags {
+	
+  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {
+	
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
+	border: none;
+	outline: none;
+}textarea.tc-edit-texteditor {
+	font-family: ;
+}canvas.tc-edit-bitmapeditor  {
+	
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}.tc-drop-down {
+	border-radius: 4px;
+	
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-block-dropdown {
+	border-radius: 4px;
+	
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-modal {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+}.tc-modal-footer {
+	border-radius: 0 0 6px 6px;
+	
+  -webkit-box-shadow: inset 0 1px 0 #fff;
+     -moz-box-shadow: inset 0 1px 0 #fff;
+          box-shadow: inset 0 1px 0 #fff;
+;
+}.tc-alert {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+
+}.tc-notification {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+}.tc-sidebar-lists .tc-tab-set .tc-tab-divider {
+	border-top: none;
+	height: 1px;
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+
+}.tc-message-box img {
+	
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}.tc-plugin-info {
+	
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}
+/*
+** Start with the normalize CSS reset, and then belay some of its effects
+*//*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+Use a more readable tab size (opinionated).
+*/
+
+:root {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/*
+Sections
+========
+*/
+
+/**
+Remove the margin in all browsers.
+*/
+
+body {
+  margin: 0;
+}
+
+/**
+Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+
+body {
+  font-family:
+    system-ui,
+    -apple-system, /* Firefox supports this but not yet `system-ui` */
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+}
+
+/*
+Grouping content
+================
+*/
+
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    'Liberation Mono',
+    Menlo,
+    monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+*, input[type="search"] {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}/*
+** Button default styles. Makes them look consistent for all browsers
+*/
+html button {
+	line-height: 1.2;
+	color: inherit;
+	fill: inherit;
+	background: transparent;
+	border-color: #ec6;
+}button:disabled svg {
+	fill: rgba(255, 255, 255, 0.54);
+}/*
+** Basic element styles
+*/html, body {
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;;
+	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}html:-webkit-full-screen {
+	background-color: #212121;
+}body.tc-body {
+	font-size: 14px;
+	line-height: 20px;
+	word-wrap: break-word;
+	
+
+
+	color: rgba(255, 255, 255, 0.7);
+	background-color: #212121;
+	fill: rgba(255, 255, 255, 0.7);
+}/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */h1 {
+	font-size: 2em;
+}h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+	font-weight: normal;
+}pre {
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	word-break: break-word;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	background-color: #2a2a2a;
+	border: 1px solid transparent;
+	padding: 0 3px 2px;
+	border-radius: 3px;
+	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}code {
+	color: rgba(255, 255, 255, 0.54);
+	background-color: #2a2a2a;
+	border: 1px solid transparent;
+	white-space: pre-wrap;
+	padding: 0 3px 2px;
+	border-radius: 3px;
+	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}blockquote {
+	border-left: 5px solid #212121;
+	margin-left: 25px;
+	padding-left: 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}blockquote > div {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}blockquote.tc-big-quote {
+	font-family: Georgia, serif;
+	position: relative;
+	background: #2a2a2a;
+	border-left: none;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding: 10px;
+	border-radius: 8px;
+}blockquote.tc-big-quote cite:before {
+	content: "\2014 \2009";
+}blockquote.tc-big-quote:before {
+	font-family: Georgia, serif;
+	color: #212121;
+	content: open-quote;
+	font-size: 8em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+	position: absolute;
+	left: -50px;
+	top: 42px;
+}blockquote.tc-big-quote:after {
+	font-family: Georgia, serif;
+	color: #212121;
+	content: close-quote;
+	font-size: 8em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+	position: absolute;
+	right: -80px;
+	bottom: -20px;
+}dl dt {
+	font-weight: bold;
+	margin-top: 6px;
+}textarea,
+input[type=text],
+input[type=search],
+input[type=""],
+input:not([type]) {
+	color: rgba(255, 255, 255, 0.7);
+	background: #303030;
+}input[type="checkbox"] {
+	vertical-align: middle;
+}input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance:none;
+}.tc-muted {
+	color: rgba(255, 255, 255, 0.54);
+}svg.tc-image-button {
+	padding: 0px 1px 1px 0px;
+}.tc-icon-wrapper > svg {
+	width: 1em;
+	height: 1em;
+}kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font-size: 0.8em;
+	line-height: 1.2;
+	color: rgba(255, 255, 255, 0.7);
+	vertical-align: middle;
+	background-color: #303030;
+	border: solid 1px rgba(255, 255, 255, 0.54);
+	border-bottom-color: rgba(255, 255, 255, 0.54);
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.54);
+}::selection {
+	background-color: Highlight;
+	color: HighlightText;
+	background-color: ;
+	color: ;
+}.tc-inline-style {
+	background: #ffff78;
+	color: #000000;
+}form.tc-form-inline {
+	display: inline;
+}/*
+Markdown likes putting code elements inside pre elements
+*/
+pre > code {
+	padding: 0;
+	border: none;
+	background-color: inherit;
+	color: inherit;
+}/*
+Table defaults
+*/table {
+	border: 1px solid #3a3a3a;
+	width: auto;
+	max-width: 100%;
+	caption-side: bottom;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	/* next 2 elements needed, since normalize 8.0.1 */
+	border-collapse: collapse;
+	border-spacing: 0;
+}table th, table td {
+	padding: 0 7px 0 7px;
+	border-top: 1px solid #3a3a3a;
+	border-left: 1px solid #3a3a3a;
+}table thead tr td, table th {
+	background-color: rgba(255, 255, 255, 0.1);
+	font-weight: bold;
+}table tfoot tr td {
+	background-color: rgba(255, 255, 255, 0.04);
+}/*
+Table utility classes
+*//* Remove borders from table as used in eg: GettingStarted*/
+.tc-table-no-border,
+.tc-table-no-border th,
+.tc-table-no-border td {
+	border: initial;
+}/* First column in table width will fit to text.*/
+/* This rule makes most sense with tc-first-link-nowrap*/
+.tc-first-col-min-width td:nth-child(1) {
+	width: 1%;
+}/*
+** Utility classes work well with tables but also for other containers
+*//* First link A element will not wrap */
+.tc-first-link-nowrap:first-of-type a {
+	white-space: nowrap;
+}/* Move the table to the center of the container */
+.tc-center {
+	margin-left: auto;
+	margin-right: auto;
+}.tc-max-width {
+	width: 100%;
+}.tc-max-width-80 {
+	max-width: 80%;
+}/* Allow input and textarea to look like the ControlPanel inputs */
+.tc-edit-max-width input,
+.tc-edit-max-width textarea {
+	width: 100%;
+	padding: 3px;
+}/*
+CSV parser plugin
+*/.tc-csv-table {
+	white-space: nowrap;
+}.tc-csv-table th,
+.tc-csv-table td {
+	white-space: pre-line;
+}/*
+Tiddler frame in story river
+*/.tc-tiddler-frame img,
+.tc-tiddler-frame svg,
+.tc-tiddler-frame canvas,
+.tc-tiddler-frame embed,
+.tc-tiddler-frame iframe {
+	max-width: 100%;
+}.tc-tiddler-body > embed,
+.tc-tiddler-body > iframe {
+	width: 100%;
+	height: 600px;
+}:root {
+	color-scheme: dark;
+}/*
+** Links
+*/button.tc-tiddlylink,
+a.tc-tiddlylink {
+	text-decoration: none;
+	font-weight: 500;
+	color: #5656f3;
+	-webkit-user-select: inherit; /* Otherwise the draggable attribute makes links impossible to select */
+	-webkit-touch-callout: none; /* Prevents long presses from bringing up a link preview */
+}.tc-sidebar-lists a.tc-tiddlylink {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-sidebar-lists a.tc-tiddlylink:hover {
+	color: rgba(255, 255, 255, 0.7);
+}button.tc-tiddlylink:hover,
+a.tc-tiddlylink:hover {
+	text-decoration: underline;
+}a.tc-tiddlylink-resolves {
+}a.tc-tiddlylink-shadow {
+	font-weight: bold;
+}a.tc-tiddlylink-shadow.tc-tiddlylink-resolves {
+	font-weight: normal;
+}a.tc-tiddlylink-missing {
+	font-style: italic;
+}a.tc-tiddlylink-external {
+	text-decoration: underline;
+	color: #9e3eb3;
+	background-color: transparent;
+}a.tc-tiddlylink-external:visited {
+	color: #7c318c;
+	background-color: transparent;
+}a.tc-tiddlylink-external:hover {
+	color: ;
+	background-color: transparent;
+}.tc-drop-down a.tc-tiddlylink:hover {
+	color: #303030;
+}/*
+** Drag and drop styles
+*/.tc-tiddler-dragger {
+	position: relative;
+	z-index: -10000;
+}.tc-tiddler-dragger-inner {
+	position: absolute;
+	top: -1000px;
+	left: -1000px;
+	display: inline-block;
+	padding: 8px 20px;
+	font-size: 16.9px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #303030;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 20px;
+}.tc-tiddler-dragger-cover {
+	position: absolute;
+	background-color: #212121;
+}.tc-page-container > .tc-dropzone {
+	min-height: 100vh;
+}.tc-dropzone {
+	position: relative;
+}.tc-dropzone.tc-dragover:before {
+	z-index: 10000;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #ec6;
+	text-align: center;
+	content: "Drop now (or use the 'Escape' key to cancel)";
+}.tc-droppable > .tc-droppable-placeholder {
+	display: none;
+}.tc-droppable.tc-dragover > .tc-droppable-placeholder {
+	display: block;
+	border: 2px dashed #ec6;
+}.tc-draggable {
+	cursor: move;
+}.tc-sidebar-tab-open .tc-droppable-placeholder, .tc-tagged-draggable-list .tc-droppable-placeholder,
+.tc-links-draggable-list .tc-droppable-placeholder {
+	line-height: 2em;
+	height: 2em;
+}.tc-sidebar-tab-open-item {
+	position: relative;
+}.tc-sidebar-tab-open .tc-btn-invisible.tc-btn-mini svg {
+	font-size: 0.7em;
+	fill: rgba(255, 255, 255, 0.54);
+}/*
+** Plugin reload warning
+*/.tc-plugin-reload-warning {
+	z-index: 1000;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #303030;
+	text-align: center;
+}/*
+** Buttons
+*/button svg, button img, label svg, label img {
+	vertical-align: middle;
+}.tc-btn-invisible {
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.7);
+	fill: rgba(255, 255, 255, 0.7);
+}button:disabled.tc-btn-invisible  {
+	cursor: default; 
+	color: rgba(255, 255, 255, 0.54);
+}.tc-btn-boxed {
+	font-size: 0.6em;
+	padding: 0.2em;
+	margin: 1px;
+	background: none;
+	border: 1px solid #5d5d5d;
+	border-radius: 0.25em;
+}html body.tc-body .tc-btn-boxed svg {
+	font-size: 1.6666em;
+}.tc-btn-boxed:hover {
+	background: rgba(255, 255, 255, 0.54);
+	color: #303030;
+}html body.tc-body .tc-btn-boxed:hover svg {
+	fill: #303030;
+}.tc-btn-rounded {
+	font-size: 0.5em;
+	line-height: 2;
+	padding: 0em 0.3em 0.2em 0.4em;
+	margin: 1px;
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	background: rgba(255, 255, 255, 0.54);
+	color: #303030;
+	border-radius: 2em;
+}html body.tc-body .tc-btn-rounded svg {
+	font-size: 1.6666em;
+	fill: #303030;
+}.tc-btn-rounded:hover {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	background: #303030;
+	color: rgba(255, 255, 255, 0.54);
+}html body.tc-body .tc-btn-rounded:hover svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-btn-icon svg {
+	height: 1em;
+	width: 1em;
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-btn-text {
+	margin-left: 7px;
+}/* used for documentation "fake" buttons */
+.tc-btn-standard {
+	line-height: 1.8;
+	color: #667;
+	background-color: #e0e0e0;
+	border: 1px solid #888;
+	padding: 2px 1px 2px 1px;
+	margin: 1px 4px 1px 4px;
+}.tc-btn-big-green {
+	display: inline-block;
+	padding: 8px;
+	margin: 4px 8px 4px 8px;
+	background: #5656f3;
+	color: rgba(255, 255, 255, 0.7);
+	fill: rgba(255, 255, 255, 0.7);
+	border: none;
+	border-radius: 2px;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-decoration: none;
+}.tc-btn-big-green svg,
+.tc-btn-big-green img {
+	height: 2em;
+	width: 2em;
+	vertical-align: middle;
+	fill: rgba(255, 255, 255, 0.7);
+}.tc-primary-btn {
+	background: #5656f3;
+}.tc-sidebar-lists input {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-sidebar-lists button {
+	color: rgba(255, 255, 255, 0.7);
+	fill: rgba(255, 255, 255, 0.7);
+}.tc-sidebar-lists button.tc-btn-mini {
+	color: rgba(255, 255, 255, 0.38);
+}.tc-sidebar-lists button.tc-btn-mini:hover {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-sidebar-lists button small {
+	color: rgba(255, 255, 255, 0.7);
+}button svg.tc-image-button, button .tc-image-button img {
+	height: 1em;
+	width: 1em;
+}.tc-unfold-banner {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	width: 100%;
+	width: calc(100% + 2px);
+	margin-left: -43px;
+	text-align: center;
+	border-top: 2px solid #454545;
+	margin-top: 4px;
+}.tc-unfold-banner:hover {
+	background: #454545;
+	border-top: 2px solid #454545;
+}.tc-unfold-banner svg, .tc-fold-banner svg {
+	height: 0.75em;
+	fill: #5d5d5d;
+}.tc-unfold-banner:hover svg, .tc-fold-banner:hover svg {
+	fill: #494949;
+}.tc-fold-banner {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	width: 23px;
+	text-align: center;
+	margin-left: -35px;
+	top: 6px;
+	bottom: 6px;
+}.tc-fold-banner:hover {
+	background: #454545;
+}@media (max-width: 959px) {.tc-unfold-banner {
+		position: static;
+		width: calc(100% + 59px);
+	}.tc-fold-banner {
+		width: 16px;
+		margin-left: -16px;
+		font-size: 0.75em;
+	}}/*
+** Tags and missing tiddlers
+*/.tc-tag-list-item {
+	position: relative;
+	display: inline-block;
+}.tc-tags-wrapper {
+	margin: 4px 0 14px 0;
+}.tc-tags-wrapper .tc-tag-list-item {
+	margin-right: 7px;
+}.tc-missing-tiddler-label {
+	font-style: italic;
+	font-weight: normal;
+	display: inline-block;
+	font-size: 11.844px;
+	line-height: 14px;
+	white-space: nowrap;
+	vertical-align: baseline;
+}.tc-block-tags-dropdown > .tc-btn-invisible:hover {
+	background-color: #5656f3;
+}button.tc-tag-label, span.tc-tag-label {
+	display: inline-block;
+	padding: 0.16em 0.7em;
+	font-size: 0.9em;
+	font-weight: normal;
+	line-height: 1.2em;
+	color: inherit;
+	white-space: break-spaces;
+	vertical-align: baseline;
+	background-color: #ec6;
+	border-radius: 1em;
+}.tc-sidebar-scrollable .tc-tag-label {
+	text-shadow: none;
+}.tc-untagged-separator {
+	width: 10em;
+	left: 0;
+	margin-left: 0;
+	border: 0;
+	height: 1px;
+	background: #3a3a3a;
+}button.tc-untagged-label {
+	background-color: rgba(255, 255, 255, 0.12);
+}.tc-tag-label svg, .tc-tag-label img {
+	height: 1em;
+	width: 1em;
+	margin-right: 3px;
+	margin-bottom: 1px;
+	vertical-align: bottom;
+}.tc-edit-tags button.tc-remove-tag-button svg {
+	font-size: 0.7em;
+	vertical-align: middle;
+}.tc-tag-manager-table .tc-tag-label {
+}.tc-tag-manager-tag {
+	width: 100%;
+}button.tc-btn-invisible.tc-remove-tag-button {
+	outline: none;
+}.tc-tag-button-selected,
+.tc-list-item-selected a.tc-tiddlylink, a.tc-list-item-selected {
+	background-color: #5656f3;
+	color: #303030;
+}/*
+** Page layout
+*/.tc-topbar {
+	position: fixed;
+	z-index: 1200;
+}.tc-topbar-left {
+	left: 29px;
+	top: 5px;
+}.tc-topbar-right {
+	top: 5px;
+	right: 29px;
+}@media (max-width: 959px) {.tc-topbar-right {
+		right: 10px;
+	}}.tc-topbar button {
+	padding: 8px;
+}.tc-topbar svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-topbar button:hover svg {
+	fill: rgba(255, 255, 255, 0.7);
+}@media (max-width: 959px) {.tc-show-sidebar-btn svg.tc-image-chevron-left, .tc-hide-sidebar-btn svg.tc-image-chevron-right {
+		transform: rotate(-90deg);
+	}}.tc-sidebar-header {
+	color: rgba(255, 255, 255, 0.54);
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-sidebar-header .tc-title a.tc-tiddlylink-resolves {
+	font-weight: normal;
+}.tc-sidebar-header .tc-sidebar-lists p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}.tc-sidebar-header .tc-missing-tiddler-label {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-advanced-search input {
+	width: 60%;
+}.tc-search a svg {
+	width: 1.2em;
+	height: 1.2em;
+	vertical-align: middle;
+}.tc-page-controls {
+	margin-top: 14px;
+	font-size: 1.5em;
+}.tc-page-controls .tc-drop-down {
+	font-size: 1rem;
+}.tc-page-controls button {
+	margin-right: 0.5em;
+}.tc-page-controls a.tc-tiddlylink:hover {
+	text-decoration: none;
+}.tc-page-controls img {
+	width: 1em;
+}.tc-page-controls svg {
+	fill: #5d5d5d;
+}.tc-page-controls button:hover svg, .tc-page-controls a:hover svg {
+	fill: #494949;
+}.tc-sidebar-lists .tc-menu-list-item {
+	white-space: nowrap;
+}.tc-menu-list-count {
+	font-weight: bold;
+}.tc-menu-list-subitem {
+	padding-left: 7px;
+}.tc-story-river {
+	position: relative;
+}@media (max-width: 959px) {.tc-sidebar-header {
+		padding: 14px;
+		min-height: 32px;
+		margin-top: 0px;
+		transition:  min-height 400ms ease-in-out, padding-top 400ms ease-in-out, padding-bottom 400ms ease-in-out;
+	}
+	
+	.tc-story-river {
+		position: relative;
+		padding: 0;
+	}
+}@media (min-width: 960px) {.tc-message-box {
+		margin: 21px -21px 21px -21px;
+	}.tc-sidebar-scrollable {
+		position: fixed;
+		top: 0px;
+		left: 770px;
+		bottom: 0;
+		right: 0;
+		overflow-y: auto;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		margin: 0 0 0 -42px;
+		padding: 71px 0 28px 42px;
+	}html[dir="rtl"] .tc-sidebar-scrollable {
+		left: auto;
+		right: 770px;
+	}.tc-story-river {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 770px;
+		padding: 42px 42px 42px 42px;
+	}.tc-story-river.tc-static-story-river {
+		margin-right: 0;
+		padding-right: 42px;
+	}}@media print {body.tc-body {
+		background-color: transparent;
+	}.tc-sidebar-header, .tc-topbar {
+		display: none;
+	}.tc-story-river {
+		margin: 0;
+		padding: 0;
+	}.tc-story-river .tc-tiddler-frame {
+		margin: 0;
+		border: none;
+		padding: 0;
+	}
+}/*
+** Tiddler styles
+*/.tc-tiddler-frame {
+	position: relative;
+	margin-bottom: 28px;
+	background-color: #303030;
+	border: 1px solid rgb(55,55,55);
+}
+.tc-tiddler-info {
+	overflow: hidden;
+	padding: 14px 42px 14px 42px;
+	background-color: #454545;
+	border-top: 1px solid #454545;
+	border-bottom: 1px solid #454545;
+}.tc-tiddler-info p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}.tc-tiddler-info .tc-tab-buttons button.tc-tab-selected {
+	background-color: rgba(255, 255, 255, 0.04);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}@media (max-width: 959px) {.tc-tiddler-info {
+		padding: 14px 14px 14px 14px;
+	}}.tc-view-field-table {
+	width: 100%;
+}.tc-view-field-name {
+	width: 1%; /* Makes this column be as narrow as possible */
+	white-space: nowrap;
+	vertical-align: top;
+	text-align: right;
+	font-style: italic;
+	font-weight: normal;
+}.tc-view-field-value {
+	word-break: break-all;
+}@media (max-width: 959px) {
+	.tc-tiddler-frame {
+		padding: 14px 14px 14px 14px;
+		margin-bottom: .5em;
+	}.tc-tiddler-info {
+		margin: 0 -14px 0 -14px;
+	}
+}@media (min-width: 960px) {
+	.tc-tiddler-frame {
+		padding: 28px 42px 42px 42px;
+		width: 686px;
+		border-radius: 2px;
+	}.tc-tiddler-info {
+		margin: 0 -42px 0 -42px;
+	}
+}/* prevent overflow for table content for small screens*/
+@media (max-width: 960px) {
+	.tc-tiddler-frame tr {
+		word-wrap: anywhere;
+	}.tc-tiddler-frame table blockquote {
+		margin-left: 12.5px;
+		margin-right: 12.5px; 
+	}.tc-tiddler-frame table dd {
+		margin-left: 12.5px;
+	}.tc-tiddler-frame table ol,
+	.tc-tiddler-frame table ul {
+		padding-left: 20px;
+	}
+}.tc-site-title,
+.tc-titlebar {
+	font-weight: normal;
+	font-size: 2.35em;
+	line-height: 1.35em;
+	color: #FFFFFF;
+	margin: 0;
+}.tc-site-title {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-tiddler-title-icon {
+	vertical-align: middle;
+	margin-right: .1em;
+}.tc-system-title-prefix {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-titlebar h2 {
+	font-size: 1em;
+	display: inline;
+}.tc-titlebar img {
+	height: 1em;
+}.tc-subtitle {
+	font-size: 0.9em;
+	color: rgba(255, 255, 255, 0.54);
+	font-weight: normal;
+}.tc-subtitle .tc-tiddlylink {
+	margin-right: .3em;
+}.tc-tiddler-missing .tc-title {
+	font-style: italic;
+	font-weight: normal;
+}.tc-tiddler-frame .tc-tiddler-controls {
+	float: right;
+	padding: 3px; /* make space for outline */
+}.tc-tiddler-controls .tc-drop-down {
+	font-size: 0.6em;
+}.tc-tiddler-controls .tc-drop-down .tc-drop-down {
+	font-size: 1em;
+}.tc-tiddler-controls > span > button,
+.tc-tiddler-controls > span > span > button,
+.tc-tiddler-controls > span > span > span > button {
+	vertical-align: baseline;
+	margin-left:5px;
+}.tc-tiddler-controls button svg, .tc-tiddler-controls button img,
+.tc-search button svg, .tc-search a svg {
+	fill: #5d5d5d;
+}.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
+	height: 0.75em;
+}.tc-search button svg, .tc-search a svg {
+	height: 1.2em;
+	width: 1.2em;
+	margin: 0 0.25em;
+}.tc-tiddler-controls button.tc-selected svg,
+.tc-page-controls button.tc-selected svg  {
+	fill: #494949;
+}.tc-tiddler-controls button.tc-btn-invisible:hover svg,
+.tc-search button:hover svg, .tc-search a:hover svg {
+	fill: #494949;
+}@media print {
+	.tc-tiddler-controls {
+		display: none;
+	}
+}.tc-tiddler-help { /* Help prompts within tiddler template */
+	color: rgba(255, 255, 255, 0.54);
+	margin-top: 14px;
+}.tc-tiddler-help a.tc-tiddlylink {
+	color: rgba(255, 255, 255, 0.12);
+}.tc-tiddler-frame .tc-edit-texteditor {
+	width: 100%;
+	margin: 4px 0 4px 0;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor,
+.tc-tiddler-frame select.tc-edit-texteditor {
+	padding: 3px 3px 3px 3px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	line-height: 1.3em;
+	font-family: ;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor {
+	-webkit-appearance: none;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame select.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor {
+	background-color: transparent;
+}.tc-tiddler-frame iframe.tc-edit-texteditor {
+	background-color: #303030;
+}.tc-tiddler-frame .tc-edit-fields input.tc-edit-fieldeditor,
+.tc-tiddler-frame .tc-edit-fields select.tc-edit-fieldeditor,
+.tc-tiddler-frame .tc-edit-fields textarea.tc-edit-fieldeditor {
+	margin: 0;
+	padding: 2px 3px;
+}.tc-tiddler-frame .tc-binary-warning {
+	width: 100%;
+	height: 5em;
+	text-align: center;
+	padding: 3em 3em 6em 3em;
+	background: #303030;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}canvas.tc-edit-bitmapeditor  {
+	border: 6px solid ;
+	cursor: crosshair;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}.tc-edit-bitmapeditor-width {
+	display: block;
+}.tc-edit-bitmapeditor-height {
+	display: block;
+}.tc-tiddler-body {
+	clear: both;
+}.tc-tiddler-frame .tc-tiddler-body {
+	font-size: 15px;
+	line-height: 22px;
+}.tc-titlebar, .tc-tiddler-edit-title {
+	overflow: hidden; /* https://github.com/Jermolene/TiddlyWiki5/issues/282 */
+}html body.tc-body.tc-single-tiddler-window {
+	margin: 1em;
+	background: #303030;
+}.tc-single-tiddler-window img,
+.tc-single-tiddler-window svg,
+.tc-single-tiddler-window canvas,
+.tc-single-tiddler-window embed,
+.tc-single-tiddler-window iframe {
+	max-width: 100%;
+}/*
+** Editor
+*/.tc-editor-toolbar {
+	margin-top: 8px;
+}.tc-editor-toolbar button {
+	vertical-align: middle;
+	background-color: #5d5d5d;
+	color: #494949;
+	fill: #494949;
+	border-radius: 4px;
+	padding: 3px;
+	margin: 2px 0 2px 4px;
+}.tc-editor-toolbar button.tc-text-editor-toolbar-item-adjunct {
+	margin-left: 1px;
+	width: 1em;
+	border-radius: 8px;
+}.tc-editor-toolbar button.tc-text-editor-toolbar-item-start-group {
+	margin-left: 11px;
+}.tc-editor-toolbar button.tc-selected {
+	background-color: #5656f3;
+}.tc-editor-toolbar button svg {
+	width: 1.6em;
+	height: 1.2em;
+}.tc-editor-toolbar button:hover {
+	background-color: #494949;
+	fill: #303030;
+	color: #303030;
+}.tc-editor-toolbar .tc-text-editor-toolbar-more {
+	white-space: normal;
+}.tc-editor-toolbar .tc-text-editor-toolbar-more button {
+	display: inline-block;
+	padding: 3px;
+	width: auto;
+}.tc-editor-toolbar .tc-search-results {
+	padding: 0;
+}.tc-editor-toolbar button.tc-editortoolbar-stamp-button + .tc-popup .tc-drop-down > p {
+	margin: 0;
+	padding: 0;
+}.tc-editor-toolbar button.tc-editortoolbar-stamp-button + .tc-popup .tc-drop-down a.tc-tiddlylink {
+	font-weight: normal;
+}/*
+** Adjustments for fluid-fixed mode
+*/@media (min-width: 960px) {.tc-story-river {
+		padding-right: 0;
+		position: relative;
+		width: auto;
+		left: 0;
+		margin-left: 0px;
+		margin-right: 400px;
+	}.tc-tiddler-frame {
+		width: 100%;
+	}.tc-sidebar-scrollable {
+		left: auto;
+		bottom: 0;
+		right: 0;
+		width: 400px;
+	}body.tc-body .tc-storyview-zoomin-tiddler {
+		width: 100%;
+		width: calc(100% - 42px);
+	}}/*
+** Toolbar buttons
+*/.tc-page-controls svg.tc-image-new-button {
+	fill: ;
+}.tc-page-controls svg.tc-image-options-button {
+	fill: ;
+}.tc-page-controls svg.tc-image-save-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-info-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-edit-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-close-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-delete-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-cancel-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-done-button {
+	fill: ;
+}.tc-page-controls svg.tc-image-layout-button {
+	fill: ;
+}/*
+** Tiddler edit mode
+*/.tc-tiddler-edit-frame em.tc-edit {
+	color: rgba(255, 255, 255, 0.54);
+	font-style: normal;
+}.tc-edit-type-dropdown a.tc-tiddlylink-missing {
+	font-style: normal;
+}.tc-type-selector .tc-edit-typeeditor {
+	width: auto;
+}.tc-type-selector-dropdown-wrapper {
+	display: inline-block;
+}.tc-type-selector-dropdown-wrapper {
+		min-width: calc(32ch + 4em);
+	}.tc-type-selector-dropdown-wrapper input.tc-edit-typeeditor {
+		min-width: 32ch;
+	}.tc-edit-tags {
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 4px 8px 4px 8px;
+}.tc-edit-add-tag {
+	display: inline-block;
+}.tc-edit-add-tag .tc-add-tag-name input {
+	width: 50%;
+}.tc-edit-add-tag .tc-keyboard {
+	display:inline;
+}.tc-edit-tags .tc-tag-label {
+	display: inline-block;
+}.tc-edit-tags-list {
+	margin: 14px 0 14px 0;
+}.tc-remove-tag-button {
+	padding-left: 4px;
+}.tc-tiddler-preview {
+	overflow: auto;
+}.tc-tiddler-preview-preview {
+	float: right;
+	width: 49%;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	margin: 4px 0 3px 3px;
+	padding: 3px 3px 3px 3px;
+}.tc-tiddler-preview-preview {
+	overflow-y: scroll;
+	height: 400px;
+}.tc-tiddler-frame .tc-tiddler-preview .tc-edit-texteditor {
+	width: 49%;
+}.tc-tiddler-frame .tc-tiddler-preview canvas.tc-edit-bitmapeditor {
+	max-width: 49%;
+}.tc-edit-fields {
+	width: 100%;
+}.tc-edit-fields.tc-edit-fields-small {
+	margin-top: 0;
+	margin-bottom: 0;
+}.tc-edit-fields table, .tc-edit-fields tr, .tc-edit-fields td {
+	border: none;
+	padding: 4px;
+}.tc-edit-fields > tbody > .tc-edit-field:nth-child(odd) {
+	background-color: rgba(255, 255, 255, 0.04);
+}.tc-edit-fields > tbody > .tc-edit-field:nth-child(even) {
+	background-color: rgba(255, 255, 255, 0.1);
+}.tc-edit-field-name {
+	text-align: right;
+}.tc-edit-field-value input {
+	width: 100%;
+}.tc-edit-field-remove {
+}.tc-edit-field-remove svg {
+	height: 1em;
+	width: 1em;
+	fill: rgba(255, 255, 255, 0.54);
+	vertical-align: middle;
+}.tc-edit-field-add-name-wrapper input.tc-edit-texteditor {
+	width: auto;
+}.tc-edit-field-add-name-wrapper {
+	display: inline-block;
+}.tc-edit-field-add-value {
+	display: inline-block;
+}@media (min-width: 960px) {.tc-edit-field-add-value {
+		width: 35%;
+	}}.tc-edit-field-add-button {
+	display: inline-block;
+	width: 10%;
+}/*
+** Tiddler editor dropzone
+*/.tc-dropzone-editor {
+	position:relative;
+}.tc-dropzone-editor.tc-dragover .tc-editor-toolbar::after{
+	z-index: 10000;
+	top:0;
+	left:0;
+	right:0;
+	height: 100%;
+	background: #ec6;
+	content: "Drop now (or use the 'Escape' key to cancel)";
+	pointer-events: none;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #303030;
+	border: 4px dashed rgba(255, 255, 255, 0.12);
+	font-weight: bold;
+	font-size: 150%;
+	opacity: 0.8;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-editor-importpopup {
+	width: 100%;
+	height: 100%;
+}.tc-editor-import {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2a2a2a;
+	box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+	padding: 10px;
+	width: 96%;
+	border: 1px solid #5d5d5d;
+	text-align:center;
+}.tc-editor-import img {
+	max-height: 500px;
+}/*
+** Storyview Classes
+*/.tc-viewswitcher .tc-image-button {
+	margin-right: .3em;
+}.tc-storyview-zoomin-tiddler {
+	position: absolute;
+	display: block;
+	width: 100%;
+}@media (min-width: 960px) {.tc-storyview-zoomin-tiddler {
+		width: calc(100% - 84px);
+	}}/*
+** Dropdowns
+*/.tc-btn-dropdown {
+	text-align: left;
+}.tc-btn-dropdown svg, .tc-btn-dropdown img {
+	height: 1em;
+	width: 1em;
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-drop-down-wrapper {
+	position: relative;
+}.tc-drop-down {
+	min-width: 380px;
+	border: 1px solid #424242;
+	background-color: #424242;
+	padding: 7px 0 7px 0;
+	margin: 4px 0 0 0;
+	white-space: nowrap;
+	text-shadow: none;
+	line-height: 1.4;
+}.tc-drop-down .tc-drop-down {
+	margin-left: 14px;
+}.tc-drop-down button svg, .tc-drop-down a svg  {
+	fill: rgba(255, 255, 255, 0.7);
+}.tc-drop-down button:disabled svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-drop-down button.tc-btn-invisible:hover svg {
+	fill: #303030;
+}.tc-drop-down .tc-drop-down-info {
+	padding-left: 14px;
+}.tc-drop-down p {
+	padding: 0 14px 0 14px;
+}.tc-drop-down svg {
+	width: 1em;
+	height: 1em;
+}.tc-drop-down img {
+	width: 1em;
+}.tc-drop-down a, .tc-drop-down button {
+	display: block;
+	padding: 0 14px 0 14px;
+	width: 100%;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.7);
+	line-height: 1.4;
+}.tc-drop-down .tc-tab-set .tc-tab-buttons button {
+	display: inline-block;
+	width: auto;
+	margin-bottom: 0px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}.tc-drop-down .tc-prompt {
+	padding: 0 14px;
+}.tc-drop-down .tc-chooser {
+	border: none;
+}.tc-drop-down .tc-chooser .tc-swatches-horiz {
+	font-size: 0.4em;
+	padding-left: 1.2em;
+}.tc-drop-down .tc-file-input-wrapper {
+	width: 100%;
+}.tc-drop-down .tc-file-input-wrapper button {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-drop-down a:hover, .tc-drop-down button:hover, .tc-drop-down .tc-file-input-wrapper:hover button {
+	color: #303030;
+	background-color: #5656f3;
+	text-decoration: none;
+}.tc-drop-down .tc-tab-buttons button {
+	background-color: #050505;
+}.tc-drop-down .tc-tab-buttons button.tc-tab-selected {
+	background-color: #424242;
+	border-bottom: 1px solid #424242;
+}.tc-drop-down-bullet {
+	display: inline-block;
+	width: 0.5em;
+}.tc-drop-down .tc-tab-contents a {
+	padding: 0 0.5em 0 0.5em;
+}.tc-block-dropdown-wrapper {
+	position: relative;
+}.tc-block-dropdown {
+	position: absolute;
+	min-width: 220px;
+	border: 1px solid #424242;
+	background-color: #424242;
+	padding: 7px 0;
+	margin: 4px 0 0 0;
+	white-space: nowrap;
+	z-index: 1000;
+	text-shadow: none;
+}.tc-block-dropdown.tc-search-drop-down {
+	margin-left: -12px;
+}.tc-block-dropdown a {
+	display: block;
+	padding: 4px 14px 4px 14px;
+}.tc-block-dropdown.tc-search-drop-down a {
+	display: block;
+	padding: 0px 10px 0px 10px;
+}.tc-drop-down .tc-dropdown-item-plain,
+.tc-block-dropdown .tc-dropdown-item-plain {
+	padding: 4px 14px 4px 7px;
+}.tc-drop-down .tc-dropdown-item,
+.tc-block-dropdown .tc-dropdown-item {
+	padding: 4px 14px 4px 7px;
+	color: rgba(255, 255, 255, 0.54);
+}.tc-block-dropdown a.tc-tiddlylink:hover {
+	color: #303030;
+	background-color: #5656f3;
+	text-decoration: none;
+}.tc-search-results {
+	padding: 0 7px 0 7px;
+}.tc-image-chooser, .tc-colour-chooser {
+	white-space: normal;
+}.tc-image-chooser a,
+.tc-colour-chooser a {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	position: relative;
+}.tc-image-chooser a {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	padding: 2px;
+	margin: 2px;
+	width: 4em;
+	height: 4em;
+}.tc-colour-chooser a {
+	padding: 3px;
+	width: 2em;
+	height: 2em;
+	vertical-align: middle;
+}.tc-image-chooser a:hover,
+.tc-colour-chooser a:hover {
+	background: #5656f3;
+	padding: 0px;
+	border: 3px solid #5656f3;
+}.tc-image-chooser a svg,
+.tc-image-chooser a img {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	max-width: 3.5em;
+	max-height: 3.5em;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}/* Make search dropdown visible on small screens. issue #7003 */
+@media (max-width: 960px) {.tc-sidebar-search .tc-block-dropdown-wrapper {
+		position: initial;
+	}}/*
+** Modals
+*/.tc-modal-wrapper {
+	position: fixed;
+	overflow: auto;
+	overflow-y: scroll;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 900;
+}.tc-modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: #212121;
+}.tc-modal {
+	z-index: 1100;
+	background-color: #303030;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}@media (max-width: 55em) {
+	.tc-modal {
+		position: fixed;
+		top: 1em;
+		left: 1em;
+		right: 1em;
+	}.tc-modal-body {
+		overflow-y: auto;
+		max-height: 400px;
+		max-height: 60vh;
+	}
+}@media (min-width: 55em) {
+	.tc-modal {
+		position: fixed;
+		top: 2em;
+		left: 25%;
+		width: 50%;
+	}.tc-modal-body {
+		overflow-y: auto;
+		max-height: 400px;
+		max-height: 60vh;
+	}
+}.tc-modal-header {
+	padding: 9px 15px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}.tc-modal-header h3 {
+	margin: 0;
+	line-height: 30px;
+}.tc-modal-header img, .tc-modal-header svg {
+	width: 1em;
+	height: 1em;
+}.tc-modal-body {
+	padding: 15px;
+}.tc-modal-footer {
+	padding: 14px 15px 15px;
+	margin-bottom: 0;
+	text-align: right;
+	background-color: #303030;
+	border-top: 1px solid #303030;
+}.tc-modal-prevent-scroll {
+	overflow: hidden;
+}/*
+** Centered modals
+*/
+.tc-modal-centered .tc-modal {
+	width: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) !important;
+}/*
+** Notifications
+*/.tc-notification {
+	position: fixed;
+	top: 14px;
+	right: 42px;
+	z-index: 1300;
+	max-width: 280px;
+	padding: 0 14px 0 14px;
+	background-color: #424242;
+	border: 1px solid #424242;
+}/*
+** Tabs
+*/.tc-tab-set.tc-vertical {
+	display: -webkit-flex;
+	display: flex;
+}.tc-tab-buttons {
+	font-size: 0.85em;
+	padding-top: 1em;
+	margin-bottom: -2px;
+}.tc-tab-buttons.tc-vertical  {
+	z-index: 100;
+	display: block;
+	padding-top: 14px;
+	vertical-align: top;
+	text-align: right;
+	margin-bottom: inherit;
+	margin-right: -1px;
+	max-width: 33%;
+	-webkit-flex: 0 0 auto;
+	flex: 0 0 auto;
+}.tc-tab-buttons button.tc-tab-selected {
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #303030;
+	border-left: 1px solid #3a3a3a;
+	border-top: 1px solid #3a3a3a;
+	border-right: 1px solid #3a3a3a;
+}.tc-tab-buttons button {
+	color: rgba(255, 255, 255, 0.54);
+	padding: 3px 5px 3px 5px;
+	margin-right: 0.3em;
+	font-weight: normal;
+	border: none;
+	background: inherit;
+	background-color: transparent;
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}.tc-tab-buttons.tc-vertical button {
+	display: block;
+	width: 100%;
+	margin-top: 3px;
+	margin-right: 0;
+	text-align: right;
+	background-color: transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	border-right: none;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}.tc-tab-buttons.tc-vertical button.tc-tab-selected {
+	background-color: #303030;
+	border-right: 1px solid #303030;
+}.tc-tab-divider {
+	border-top: 1px solid #3a3a3a;
+}.tc-tab-divider.tc-vertical  {
+	display: none;
+}.tc-tab-content {
+	margin-top: 14px;
+}.tc-tab-content.tc-vertical  {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 0;
+	padding-left: 14px;
+	border-left: 1px solid transparent;
+	-webkit-flex: 1 0 70%;
+	flex: 1 0 70%;
+	overflow: auto;
+}.tc-sidebar-lists .tc-tab-buttons {
+	margin-bottom: -1px;
+}.tc-sidebar-lists .tc-tab-buttons button.tc-tab-selected {
+	background-color: #212121;
+	color: rgba(255, 255, 255, 0.87);
+	border-left: 1px solid #3a3a3a;
+	border-top: 1px solid #3a3a3a;
+	border-right: 1px solid #3a3a3a;
+}.tc-sidebar-lists .tc-tab-buttons button {
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.54);
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+}.tc-sidebar-lists .tc-tab-divider {
+	border-top: 1px solid #3a3a3a;
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	border-top: none;
+	border-left: none;
+	border-bottom: none;
+	border-right: 1px solid #ccc;
+	margin-bottom: inherit;
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+	background-color: #212121;
+	border: none;
+}/*
+** Manager
+*/.tc-manager-wrapper {
+	
+}.tc-manager-controls {
+	
+}.tc-manager-control {
+	margin: 0.5em 0;
+}.tc-manager-control select {
+	max-width: 100%;
+}.tc-manager-list {
+	width: 100%;
+	border-top: 1px solid rgba(255, 255, 255, 0.54);
+	border-left: 1px solid rgba(255, 255, 255, 0.54);
+	border-right: 1px solid rgba(255, 255, 255, 0.54);
+}.tc-manager-list-item {}.tc-manager-list-item-heading {
+	display: block;
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+	padding: 3px;
+}.tc-manager-list-item-heading-selected {
+	font-weight: bold;
+	color: #303030;
+	fill: #303030;
+	background-color: rgba(255, 255, 255, 0.7);
+}.tc-manager-list-item-heading:hover {
+	background: #5656f3;
+	color: #303030;
+}.tc-manager-list-item-content {
+	display: flex;
+}.tc-manager-list-item-content-sidebar {
+	flex: 1 0;
+	background: transparent;
+	border-right: 0.5em solid rgba(255, 255, 255, 0.54);
+	border-bottom: 0.5em solid rgba(255, 255, 255, 0.54);
+	white-space: nowrap;
+}.tc-manager-list-item-content-item-heading {
+	display: block;
+	width: 100%;
+	text-align: left;
+	background: rgba(255, 255, 255, 0.54);
+	text-transform: uppercase;
+	font-size: 0.6em;
+	font-weight: bold;
+	padding: 0.5em 0 0.5em 0;
+}.tc-manager-list-item-content-item-body {
+	padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-item-body > pre {
+	margin: 0.5em 0 0.5em 0;
+	border: none;
+	background: inherit;
+}.tc-manager-list-item-content-tiddler {
+	flex: 3 1;
+	border-left: 0.5em solid rgba(255, 255, 255, 0.54);
+	border-right: 0.5em solid rgba(255, 255, 255, 0.54);
+	border-bottom: 0.5em solid rgba(255, 255, 255, 0.54);
+}.tc-manager-list-item-content-item-body > table {
+	border: none;
+	padding: 0;
+	margin: 0;
+}.tc-manager-list-item-content-item-body > table td {
+	border: none;
+}.tc-manager-icon-editor > button {
+	width: 100%;
+}.tc-manager-icon-editor > button > svg,
+.tc-manager-icon-editor > button > button {
+	width: 100%;
+	height: auto;
+}/*
+** Import table
+*/.tc-import-table {
+	width: 100%;
+}.tc-import-table svg.tc-image-edit-button {
+	max-width: unset;
+}.tc-import-table th:first-of-type {
+	width: 10%;
+}.tc-import-table th:last-of-type {
+	width: 30%;
+}.tc-import-table .tc-row-disabled {
+	background: rgba(255, 255, 255, 0.12)10;
+	opacity: 0.8;
+}.tc-import-table .tc-row-warning {
+	background: #ffc9c950;
+}/*
+** Alerts
+*/.tc-alerts {
+	position: fixed;
+	top: 28px;
+	left: 0;
+	right: 0;
+	max-width: 50%;
+	z-index: 20000;
+}.tc-alert {
+	position: relative;
+	margin: 14px;
+	padding: 7px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background-color: #303030;
+}.tc-alert-toolbar {
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	line-height: 0;
+}.tc-alert-toolbar svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-alert-subtitle {
+	color: rgba(255, 255, 255, 0.54);
+	font-weight: bold;
+	font-size: 0.8em;
+	margin-bottom: 0.5em;
+}.tc-alert-body > p {
+	margin: 0;
+}.tc-alert-highlight {
+	color: rgba(255, 255, 255, 0.12);
+}@media (min-width: 960px) {.tc-static-alert {
+		position: relative;
+	}.tc-static-alert-inner {
+		position: absolute;
+		z-index: 100;
+	}}.tc-static-alert-inner {
+	padding: 0 2px 2px 42px;
+	color: #aaaaaa;
+}/*
+** Floating drafts list
+*/.tc-drafts-list {
+	z-index: 2000;
+	position: fixed;
+	font-size: 0.8em;
+	left: 0;
+	bottom: 0;
+}.tc-drafts-list a {
+	margin: 0 0.5em;
+	padding: 4px 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 1px solid #303030;
+	border-bottom: none;
+	background: #c80000;
+	color: #303030;
+	fill: #303030;
+}.tc-drafts-list a:hover {
+	text-decoration: none;
+	background: rgba(255, 255, 255, 0.7);
+	color: #303030;
+	fill: #303030;
+}.tc-drafts-list a svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+}/*
+** Control panel
+*/.tc-control-panel td {
+	padding: 4px;
+}.tc-control-panel table, .tc-control-panel table input, .tc-control-panel table textarea {
+	width: 100%;
+}.tc-plugin-info {
+	display: flex;
+	text-shadow: none;
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	fill: rgba(255, 255, 255, 0.54);
+	background-color: #303030;
+	margin: 0.5em 0 0.5em 0;
+	padding: 4px;
+	align-items: center;
+}.tc-sidebar-lists a.tc-tiddlylink.tc-plugin-info {
+	color: #5656f3;
+}.tc-plugin-info-sub-plugins .tc-plugin-info {
+	margin: 0.5em;
+	background: #303030;
+}.tc-plugin-info-sub-plugin-indicator {
+	margin: -16px 1em 0 2em;
+}.tc-plugin-info-sub-plugin-indicator button {
+	color: #303030;
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 8px;
+	padding: 2px 7px;
+	font-size: 0.75em;
+}.tc-plugin-info-sub-plugins .tc-plugin-info-dropdown {
+	margin-left: 1em;
+	margin-right: 1em;
+}.tc-plugin-info-disabled {
+	background: -webkit-repeating-linear-gradient(45deg, #ff0, #ff0 10px, #eee 10px, #eee 20px);
+	background: repeating-linear-gradient(45deg, #ff0, #ff0 10px, #eee 10px, #eee 20px);
+}.tc-plugin-info-disabled:hover {
+	background: -webkit-repeating-linear-gradient(45deg, #aa0, #aa0 10px, #888 10px, #888 20px);
+	background: repeating-linear-gradient(45deg, #aa0, #aa0 10px, #888 10px, #888 20px);
+}a.tc-tiddlylink.tc-plugin-info:hover {
+	text-decoration: none;
+	background-color: #5656f3;
+	color: #303030;
+	fill: rgba(255, 255, 255, 0.7);
+}a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk > svg {
+	fill: #303030;
+}.tc-plugin-info-chunk {
+	margin: 2px;
+}.tc-plugin-info-chunk.tc-plugin-info-toggle {
+	flex-grow: 0;
+	flex-shrink: 0;
+	line-height: 1;
+}.tc-plugin-info-chunk.tc-plugin-info-icon {
+	flex-grow: 0;
+	flex-shrink: 0;
+	line-height: 1;
+}.tc-plugin-info-chunk.tc-plugin-info-description {
+	flex-grow: 1;
+}.tc-plugin-info-chunk.tc-plugin-info-buttons {
+	font-size: 0.8em;
+	line-height: 1.2;
+	flex-grow: 0;
+	flex-shrink: 0;
+	text-align: right;
+}.tc-plugin-info-chunk.tc-plugin-info-description h1 {
+	font-size: 1em;
+	line-height: 1.2;
+	margin: 2px 0 2px 0;
+}.tc-plugin-info-chunk.tc-plugin-info-description h2 {
+	font-size: 0.8em;
+	line-height: 1.2;
+	margin: 2px 0 2px 0;
+}.tc-plugin-info-chunk.tc-plugin-info-description div {
+	font-size: 0.7em;
+	line-height: 1.2;
+	margin: 2px 0 2px 0;
+}.tc-plugin-info-chunk.tc-plugin-info-toggle img, .tc-plugin-info-chunk.tc-plugin-info-toggle svg {
+	width: 1em;
+	height: 1em;
+}.tc-plugin-info-chunk.tc-plugin-info-icon img, .tc-plugin-info-chunk.tc-plugin-info-icon svg {
+	width: 2em;
+	height: 2em;
+}.tc-plugin-info-dropdown {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	background: #303030;
+	margin-top: -8px;
+}.tc-plugin-info-dropdown-message {
+	background: #303030;
+	padding: 0.5em 1em 0.5em 1em;
+	font-weight: bold;
+	font-size: 0.8em;
+}.tc-plugin-info-dropdown-body {
+	padding: 1em 1em 0 1em;
+	background: #303030;
+}.tc-plugin-info-sub-plugins {
+	padding: 0.5em;
+	margin: 0 1em 1em 1em;
+	background: #424242;
+}.tc-install-plugin {
+	font-weight: bold;
+	background: green;
+	color: white;
+	fill: white;
+	border-radius: 4px;
+	padding: 3px;
+}.tc-install-plugin.tc-reinstall-downgrade {
+	background: red;
+}.tc-install-plugin.tc-reinstall {
+	background: blue;
+}.tc-install-plugin.tc-reinstall-upgrade {
+	background: orange;
+}.tc-check-list {
+	line-height: 2em;
+}.tc-check-list .tc-image-button {
+	height: 1.5em;
+}/*
+** Message boxes
+*/.tc-message-box {
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: #303030;
+	padding: 0px 21px 0px 21px;
+	font-size: 12px;
+	line-height: 18px;
+	color: rgba(255, 255, 255, 0.54);
+}.tc-message-box svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+}/*
+** Pictures
+*/.tc-bordered-image {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	padding: 5px;
+	margin: 5px;
+}/*
+** Floats
+*/.tc-float-right {
+	float: right;
+}/*
+** Chooser
+*/.tc-chooser {
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+}.tc-chooser-item {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 2px 4px 2px 14px;
+}.tc-drop-down .tc-chooser-item {
+	padding: 2px;
+}.tc-chosen,
+.tc-chooser-item:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.04);
+}.tc-chosen .tc-tiddlylink {
+	cursor:default;
+}.tc-chooser-item .tc-tiddlylink {
+	display: block;
+	text-decoration: none;
+	background-color: transparent;
+}.tc-chooser-item:hover .tc-tiddlylink:hover {
+	text-decoration: none;
+}.tc-drop-down .tc-chosen .tc-tiddlylink,
+.tc-drop-down .tc-chooser-item .tc-tiddlylink:hover {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-chosen > .tc-tiddlylink:before {
+	margin-left: -10px;
+	position: relative;
+	content: "» ";
+}.tc-chooser-item svg,
+.tc-chooser-item img{
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+}.tc-language-chooser .tc-image-button img {
+	width: 2em;
+	vertical-align: -0.15em;
+}/*
+** Palette swatches
+*/.tc-swatches-horiz {
+}.tc-swatches-horiz .tc-swatch {
+	display: inline-block;
+}.tc-swatch {
+	width: 2em;
+	height: 2em;
+	margin: 0.4em;
+	border: 1px solid #888;
+}input.tc-palette-manager-colour-input {
+	width: 100%;
+	padding: 0;
+}/*
+** Table of contents
+*/.tc-sidebar-lists .tc-table-of-contents {
+	white-space: nowrap;
+}.tc-table-of-contents button {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-table-of-contents svg {
+	width: 0.7em;
+	height: 0.7em;
+	vertical-align: middle;
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-table-of-contents ol {
+	list-style-type: none;
+	padding-left: 0;
+}.tc-table-of-contents ol ol {
+	padding-left: 1em;
+}.tc-table-of-contents li {
+	font-size: 1.0em;
+	font-weight: bold;
+}.tc-table-of-contents li a {
+	font-weight: bold;
+}.tc-table-of-contents li li {
+	font-size: 0.95em;
+	font-weight: normal;
+	line-height: 1.4;
+}.tc-table-of-contents li li a {
+	font-weight: normal;
+}.tc-table-of-contents li li li {
+	font-size: 0.95em;
+	font-weight: normal;
+	line-height: 1.5;
+}.tc-table-of-contents li li li li {
+	font-size: 0.95em;
+	font-weight: normal;
+}.tc-tabbed-table-of-contents {
+	display: -webkit-flex;
+	display: flex;
+}.tc-tabbed-table-of-contents .tc-table-of-contents {
+	z-index: 100;
+	display: inline-block;
+	padding-left: 1em;
+	max-width: 50%;
+	-webkit-flex: 0 0 auto;
+	flex: 0 0 auto;
+	background: transparent;
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a,
+.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a {
+	display: block;
+	padding: 0.12em 1em 0.12em 0.25em;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a {
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a:hover {
+	text-decoration: none;
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	background: transparent;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a {
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	background: #303030;
+	margin-right: -1px;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a:hover {
+	text-decoration: none;
+}.tc-tabbed-table-of-contents .tc-tabbed-table-of-contents-content {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	border: 1px solid transparent;
+	-webkit-flex: 1 0 50%;
+	flex: 1 0 50%;
+}/*
+** Dirty indicator
+*/html body.tc-dirty span.tc-dirty-indicator, html body.tc-dirty span.tc-dirty-indicator svg {
+	fill: #c80000;
+	color: #c80000;
+}/*
+** File inputs
+*/.tc-file-input-wrapper {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}.tc-file-input-wrapper input[type=file] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-size: 999px;
+	max-width: 100%;
+	max-height: 100%;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: pointer;
+	display: inline-block;
+}::-webkit-file-upload-button {
+	cursor:pointer;
+}/*
+** Thumbnail macros
+*/.tc-thumbnail-wrapper {
+	position: relative;
+	display: inline-block;
+	margin: 6px;
+	vertical-align: top;
+}.tc-thumbnail-right-wrapper {
+	float:right;
+	margin: 0.5em 0 0.5em 0.5em;
+}.tc-thumbnail-image {
+	text-align: center;
+	overflow: hidden;
+	border-radius: 3px;
+}.tc-thumbnail-image svg,
+.tc-thumbnail-image img {
+	filter: alpha(opacity=1);
+	opacity: 1;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 100%;
+}.tc-thumbnail-wrapper:hover .tc-thumbnail-image svg,
+.tc-thumbnail-wrapper:hover .tc-thumbnail-image img {
+	filter: alpha(opacity=0.8);
+	opacity: 0.8;
+}.tc-thumbnail-background {
+	position: absolute;
+	border-radius: 3px;
+}.tc-thumbnail-icon svg,
+.tc-thumbnail-icon img {
+	width: 3em;
+	height: 3em;
+	
+  -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+     -moz-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+          filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+
+}.tc-thumbnail-wrapper:hover .tc-thumbnail-icon svg,
+.tc-thumbnail-wrapper:hover .tc-thumbnail-icon img {
+	fill: #fff;
+	
+  -webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+     -moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+          filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+
+}.tc-thumbnail-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}.tc-thumbnail-caption {
+	position: absolute;
+	background-color: #777;
+	color: #fff;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	filter: alpha(opacity=0.9);
+	opacity: 0.9;
+	line-height: 1.4;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}.tc-thumbnail-wrapper:hover .tc-thumbnail-caption {
+	filter: alpha(opacity=1);
+	opacity: 1;
+}/*
+** Diffs
+*/.tc-diff-equal {
+	background-color: ;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-diff-insert {
+	background-color: #aaefad;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-diff-delete {
+	background-color: #ffc9c9;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-diff-invisible {
+	background-color: ;
+	color: rgba(255, 255, 255, 0.54);
+}.tc-diff-tiddlers th {
+	text-align: right;
+	background: #303030;
+	font-weight: normal;
+	font-style: italic;
+}.tc-diff-tiddlers pre {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+}/*
+** Errors
+*/.tc-error {
+	background: #f00;
+	color: #fff;
+}/*
+** Tree macro
+*/.tc-tree div {
+	padding-left: 14px;
+}.tc-tree ol {
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: 0;
+}.tc-tree ol ol {
+	padding-left: 1em;
+}.tc-tree button {
+	color: #acacac;
+}.tc-tree svg {
+	fill: #acacac;
+}.tc-tree span svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: baseline;
+}.tc-tree li span {
+	color: lightgray;
+}select {
+	color: rgba(255, 255, 255, 0.7);
+	background: #303030;
+}/*
+** Utility classes for SVG icons
+*/.tc-fill-background {
+	fill: #303030;
+}/*
+** Flexbox utility classes
+*/.tc-flex {
+	display: -webkit-flex;
+	display: flex;
+}.tc-flex-column {
+	flex-direction: column;
+}.tc-flex-row {
+	flex-direction: row;
+}.tc-flex-grow-1 {
+	flex-grow: 1;
+}.tc-flex-grow-2 {
+	flex-grow: 2;
+}/*
+** Other utility classes
+*/.tc-tiny-gap {
+	margin-left: .25em;
+	margin-right: .25em;
+}.tc-tiny-gap-left {
+	margin-left: .25em;
+}.tc-tiny-gap-right {
+	margin-right: .25em;
+}.tc-small-gap {
+	margin-left: .5em;
+	margin-right: .5em;
+}.tc-small-gap-left {
+	margin-left: .5em;
+}.tc-small-gap-right {
+	margin-right: .5em;
+}.tc-big-gap {
+	margin-left: 1em;
+	margin-right: 1em;
+}.tc-big-gap-left {
+	margin-left: 1em;
+}.tc-big-gap-right {
+	margin-right: 1em;
+}.tc-word-break {
+	word-break: break-all;
+}
+.tc-relink-references {
+}.tc-relink-references-table {
+	width: 100%;
+	border: none;
+}.tc-relink-references-table td {
+	border-left: none;
+}.tc-relink-references-table tr:first-child td {
+	border-top: none;
+}.tc-relink-references-title {
+	text-align: left;
+	vertical-align: top;
+}.tc-relink-references-occurrence {
+	font-style: italic;
+	text-align: left;
+	font-weight: 200;
+	padding-left: 25px;
+	vertical-align: top;
+}.tc-relink-header-plugin {
+	text-align: left;
+}.tc-relink-header-plugin button {
+	width: 100%
+}.tc-relink-column-type {
+	width: 8em;
+}.tc-relink-column-type select {
+	width: 100%;
+}.tc-relink-column-delete {
+	border-left: none;
+	text-align: left;
+}.tc-relink-column-delete button {
+	padding-left: 1em;
+}.tc-relink-impossible a.tc-tiddlylink {
+	color: #c80000;
+}.tc-relink-menu-missing-blurb {
+	margin-left: 30pt;
+}
+ul.checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}ul.checklist > li {
+    position: relative;
+    width: calc(100% - 1em);
+}/* input form */.checklist-newitem-icon::before {
+    content: "✎";
+}input.checklist-newitem {
+    margin-left: 1em;
+    margin-bottom: 0.75em;
+    padding: 2px;
+    border: none;
+    border-bottom: solid 2px transparent;
+    transition: border 0.3s;
+    width: calc(100% - 2em - 20px);
+}input:focus.checklist-newitem {
+    border-bottom: solid 2px #424242;
+}/* placeholder text */-webkit-input-placeholder { color: #444;
+  font-style: italic;
+}
+::-moz-placeholder { 
+  color: #444;
+  font-style: italic;
+}
+:-ms-input-placeholder { 
+  color: #444;
+  font-style: italic;
+}
+:-moz-placeholder { 
+  color: #444;
+  font-style: italic;
+}
+::placeholder {
+  color: #444;
+  font-style: italic;
+}/* list items content */.checklist li input[type="checkbox"] {
+    vertical-align: top;
+    margin-top: 4px;
+}.checklist label {
+    display: inline-block;
+    position: relative;
+    margin-left: -1em;
+    padding-left: 0.4em;
+    left: 1.4em;
+    width: calc(100% - 2em - 20px);
+}.checklist > li:hover label, 
+.checklist input[type="checkbox"]:hover + button + label, 
+.checklist input[type="checkbox"]:focus + button + label  {
+    background-color: transparent;
+}input:checked + .checklist-remove + label {
+    opacity: 0.5;
+}.checklist li input + .checklist-remove:hover + label,
+.checklist li input + .checklist-remove:focus + label  {
+    background-color:  rgba(255,0,0,0.25);
+    opacity: 0.8;
+    border-radius: 5px;
+}/* strike checked items only if set in user configuration */
+
+input:checked + .checklist-remove + label {
+    text-decoration: line-through;
+}
+/* buttons */button.checklist-add {
+    position: relative;
+    left: 0.75em;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2211%22%3E%0A%3Crect%20width%3D%221%22%20height%3D%227%22%20x%3D%225%22%20y%3D%222%22%20fill%3D%22%239B9B9B%22%2F%3E%0A%3Crect%20width%3D%227%22%20height%3D%221%22%20x%3D%222%22%20y%3D%225%22%20fill%3D%22%239B9B9B%22%2F%3E%0A%3C%2Fsvg%3E');
+    background-size: 100%;
+}button.checklist-add:hover, button.checklist-add:focus {
+    background-color: transparent;
+}button.checklist-remove {
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.38);
+background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2211%22%3E%0A%3Crect%20width%3D%225%22%20height%3D%221%22%20x%3D%223%22%20y%3D%225%22%20fill%3D%22%23444%22%2F%3E%0A%3C%2Fsvg%3E');
+    background-size: 100%;
+/*    background-color: #212121; */
+    border: 1px solid transparent;
+}ul.checklist > li:hover button.checklist-remove {
+    color: rgba(255, 255, 255, 0.54);
+}button.checklist-remove:hover,
+button.checklist-remove:focus {
+    color:  #c80000;
+    background-color: transparent;
+}button.checklist-clearall {
+    margin-top: 0.75em;
+}button.checklist-clearall::before {
+    content: "↻ ";
+}/* visualliy hidden, accessible for screen reader */.checklist-vh {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+</style>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<a name="Corridors of the Ark Player Resources">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Corridors of the Ark Player Resources" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Corridors of the Ark Player Resources</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 9th April 2023 at 11:32am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>This is a website of player resources for the Corridors of the Ark D&amp;D 5e campaign.</p><p>If you're looking for info on the current state of the campaign, check out these:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Rumor%20and%20Bounty%20Board">Rumor and Bounty Board</a>, for currently active quests and the like.</li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#People%20of%20Voidperch">People of Voidperch</a>, for shops and useful info that NPCs collect for you.</li></ul><p>If you're new, take a look at these documents:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Campaign%20Introduction">Campaign Introduction</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Open%20Table%20D%26D%20For%20Highly%20Intelligent%20People">Open Table D&amp;D For Highly Intelligent People</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#House%20Rules">House Rules</a></li></ul></div>
+</div>
+</a><a name="Rumor and Bounty Board">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Rumor and Bounty Board" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Rumor and Bounty Board</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 27th February 2023 at 8:45pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><h2 class="">Rumors</h2><p><ul>
+
+</ul></p><h2 class="">Quests</h2><p><ul>
+
+<li>Rumor has it, these ancient magical artifacts called "Watchfires" can be used to drive monsters permanently from an area. This would be a big boost to our exploration efforts, so I'll pay you for each one you manage light. Uh... good luck, then. – Gregory, guard captain (900 gp / fire lit)</li>
+
+</ul></p><h2 class="">Treasure Bounties</h2><h3 class="">Best Bounties</h3><p><ul>
+
+<li>Our supply of food staples is improving, but many ask for legendary fine drinks from Skybridge. I will pay you for your efforts. – Dannore, quartermaster (225 gp / slot)</li>
+
+<li>So far, we've been finding scraps of scraps of historical books. But according to rumor, the Neighborhoods of Skybridge has an entire library in it, and some of the books might be intact! Please bring them to me! – Orinne, archivist (225 gp / slot)</li>
+
+<li>Many in Voidperch feel that the direction of exploration thus far has been too... utilitarian. Our ancestors lived like Kings, why shouldn't we? If you bring me anything that would help with this, I will provide a... reasonable fee. – Raimund, alchemist (225 gp / slot)</li>
+
+</ul></p><h3 class="">Second-Rate Bounties</h3><p><ul>
+
+<li>The ancients could build machines we can’t even dream of. Bring me some intact examples, even parts, and I’ll make it worth your while. – Amelia, smith (50 gp / slot)</li>
+
+<li>We’re slowly running out of food. Bring emergency food supplies, or even better seeds for new crops, and you’ll be rewarded. – Dannore, quartermaster (50 gp / slot)</li>
+
+<li>Now that the barrier is down, we have more threats than we have guards. Bring me 
+some intact armor or weapons from out there, and we’ll be grateful. – Gregory, guard captain (50 gp / slot)</li>
+
+</ul></p><h2 class="">Investigated Rumors and Completed Quests</h2><p><ul>
+
+<li>They say those towers at the center of the floating islands were used by the ancients to store food in some sort of magical stasis!</li>
+
+<li>There’s supposed to be a ghost somewhere on the starboard side of the field that’ll talk to you, not just scream at you. Supposedly, she doesn’t even believe she’s dead. Kinda sad when you think about it.</li>
+
+<li>Please retrieve a sample of the mysterious dragon to the North for me. Don't be afraid, it isn't the real thing, just a construct made from plants and possibly ectoplasm. Do this for me, and I might have an interesting new item to sell you. – Raimund, local alchemist</li>
+
+<li>I had a friend, a long time ago. He died in the battle. Which battle? You ask too many questions. If you’re going out, could you find his corpse so that I can give him a burial? I’ll pay. I believe he died on the port side of the battlefield. – Elanil, mage (400 gp)</li>
+
+</ul></p></div>
+</div>
+</a><a name="People of Voidperch">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="People of Voidperch" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">People of Voidperch</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 8:11pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>Dannore</p><p>(Elf, m): Manages Voidperch's supply stockpiles. Very religious and very taciturn. Unusually for an elf, he's large in both height and build.</p><p>Manages <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Dannore's%20General%20Goods">Dannore's General Goods</a>.</p><hr><p>Amelia</p><p>(Human, f): Blacksmith fascinated with the crafting processes of the ancients. Pierced through one eyebrow and one ear.</p><p>Manages <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Amelia's%20Smithy">Amelia's Smithy</a>.</p><hr><p>Raimund</p><p>(Black Dragonborn, m): Wanted to cure Hadriel's ailment, but was rebuffed. Does suspicious experiments. Always wears his heavy experimental robes.</p><p>Manages <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Raimund's%20Alchemy%20Shop">Raimund's Alchemy Shop</a>.</p><hr><p>Elanil</p><p>(Elf, f): Ancient elf with a mysterious past. Starting to go a bit senile. Never seen without a silver circlet, but otherwise dresses very simply.</p><p>Manages <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Elanil's%20Magic%20Shop">Elanil's Magic Shop</a>.</p><hr><p>Orinne</p><p>(Dwarf, f): The town historian. Eccentric, but very focused and good at her job. Never seen without the notebook she constantly writes in.</p><p>Manages <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Orinne's%20Tagboard">Orinne's Tagboard</a>.</p><hr><p>Gregory</p><p>(Human, m): Leader of the town guard. Never took his job very seriously and is now overwhelmed. Disheveled appearance.</p><p>Manages <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Gregory's%20Monster%20File">Gregory's Monster File</a>.</p><hr><p>Helartha</p><p>(Wood Elf, f): A goat herder from the previous generation as Nadine, which made her something of a distant aunt figure. Makes trinkets as a hobby, and is often wearing an incongruously fancy (but never impractical) piece of jewellery while herding goats.</p><hr></div>
+</div>
+</a><a name="Campaign Introduction">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Campaign Introduction" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Campaign Introduction</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 9th April 2023 at 11:22am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>For generations, the inhabitants of the town of Voidperch have lived a small life. Less than 2,000 people trapped on a small floating rock in an infinite night. You struggle to pull enough food from the limited farming space to feed everyone, and must occasionally fend off monsters that wing in from the black nothingness.</p><p>It is a hard, boring struggle for survival, but it's all any of you have ever known.</p><p>It's more difficult for the elders, you sometimes feel. They still tell stories of Skybridge, the land of your many-times-great-grandparents. Golden highways crossing the sky, legions of knights in burnished armor, enough food that anyone who wasn't careful would end up fat.</p><p>It always sounded like a fairy tale to child of the strict limits of Voidperch. In the aftward direction, there is nothing but a drop off the floating island into an infinite abyss. In the foreward, Hadriel's Wall blocks all progress.</p><p>Or at least... it did.</p><p>For centuries, the Angel Hadriel always insisted that he was protecting the people of Voidperch by maintaining the Wall to the fore. Over the last few years, however, it became clear that he was ailing, and the Wall with him. Its bright gold glow faded slowly down to a faint yellow sputter.</p><p>Two weeks ago, Hadriel descended into Voidperch's town square, calling all who could to listen to him.</p><p>"I am dying," he told you all, his commanding voice from your childhood now hoarsened into a rasp. "And with me, your protection will also die. In two weeks, you will be required to be in control of your own destiny again. I am sorry."</p><p>The announcement provoked every reaction from panic to elation, but for whatever reason, you found yourself curious. There was land beyond the Wall. Beyond Voidperch. Perhaps a daring explorer might even discover the Skybridge of legends, and make a legend of themselves in the process.</p><p>Today, wearing the best equipment Voidperch can scrounge up, surrounded by your companions, you step forward into the unknown as the golden Angelic light of the Wall fades for the last time.</p></div>
+</div>
+</a><a name="Open Table D&amp;D For Highly Intelligent People">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Open Table D&amp;D For Highly Intelligent People" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Open Table D&amp;D For Highly Intelligent People</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 9th April 2023 at 11:17am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>An open table D&amp;D campaign is one that’s meant to make it easier to play the game as adults with jobs and responsibilities. And in the process, it creates a really cool play experience. An open table has 3 major characteristics, which I’m stealing wholesale from Ben Robbins’ <a class="tc-tiddlylink-external" href="https://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/" rel="noopener noreferrer" target="_blank">West Marches</a> article. They are:</p><ul><li>There is no regular time: every session is scheduled by the players on the fly.</li><li>There is no regular party: each game has different players drawn from a large pool of people.</li><li>There is no regular plot: the players decide where to go and what to do.</li></ul><p>This little doc is supposed to be a brief intro to everything you need to know to play, from stuff you need to do before your first session (character creation and session scheduling) to stuff you do during the session (combat, exploration, and roleplaying).</p><h2 class="">Character Creation</h2><p>Character creation really isn’t any different from normal D&amp;D; the process is described in detail in the Player’s Handbook (PHB). I've provided a copy for those that don't have their own (not in this TiddlyWiki).</p><p>We are starting at level 1.</p><p>If you’re new to D&amp;D, I would advise sticking with the fighty classes (Barbarian, Fighter, Monk, Paladin, Ranger, Rogue) and only using material found in the PHB. If you’re not new, I’m fine with you using any material published by WotC.</p><p>You can use any of the methods the PHB lays out to determine your ability scores (rolling, standard array, point buy).</p><p>Please keep an updated copy of your character sheet on the campaign drive. You don’t have to actually use that sheet regularly, just make sure it’s up to date.</p><p>If you want some help with character creation, or just want to do it as a group, we’ll schedule a Character Creation Extravaganza… sometime. We’ll talk about it in the discord.</p><h2 class="">Session Scheduling</h2><p>Once I’m actually ready to start playing, I’ll send out an email every Sunday with my play schedule for the upcoming week.</p><p>If you want to play, send a message on the discord and find some other people that want to play at the same time and go to the same place. Generally, you want a group between 3 and 5 people. That 5 is a hard ceiling, but you can have as few people as you want. Fewer people on the adventure means fewer ways to split the treasure, but also more danger.</p><p>If there are more than 5 people that want to play on any particular day, the people that are highest on the Session Queue get priority. This lets people that haven’t played in a while get a session when they want one.</p><h2 class="">Combat</h2><p>The First Pillar of D&amp;D is slaying terrible monsters!</p><p>Combat in D&amp;D seems big and intimidating, but it’s actually a series of simple steps.</p><ol><li>The DM prompts you that it’s your turn, and lets the next person know they’re coming up.<ol><li>“Pike, it’s your turn. Keyleth, you’re on deck.”</li></ol></li><li>You tell the DM what you want to do, in 1 or 2 sentences.<ol><li>For Example: “I charge towards that goblin and smash it with my mace. Then I give Grog a Healing Word spell.”</li></ol></li><li>You both roll any dice that need to be rolled.</li><li>The DM narrates the result.</li></ol><p>Be prepared on your turn to tell the DM what you want to do when your turn starts. If you hesitate at the start of your turn, the DM will prompt you once (“Keyleth, are you hesitating?”), and if you still don’t know what you want to do after that, your turn will get skipped (“Keyleth lost her turn to hesitation.”).</p><p>Try to understand your spells and abilities before you have to use them in combat. Flipping through books or doing google searches during combat slows things to a crawl. That said, if you have questions about your abilities, always feel free to ask.</p><p>That all sounds a bit scary, but it isn’t really. Just be prepared when you know your turn is coming up.</p><h2 class="">Exploration</h2><p>The Second Pillar of D&amp;D is exploring dangerous locations!</p><p>Exploration also follows a pretty simple pattern:</p><ol><li>The DM describes a situation.<ol><li>“The last of the goblins fall dead and you have time to take in the room in a bit more detail. Shelves filled with what looks like broken experimental equipment and notes line the South wall. A table covered in broken glassware sits along the East wall. Under the table, a chest sits locked. What do you want to do?”</li></ol></li><li>The players discuss how they each want to respond to the situation.</li><li>One player, the “caller”, tells the DM what the party is doing.<ol><li>“Vax is going to go over and try to pick the lock on the chest. Pike and Grog are going to search the shelves for anything interesting. Keyleth is just going to catch her breath.”</li></ol></li><li>Any necessary die rolls are made.</li><li>The DM narrates the results.<ol><li>“Vax, your pick slips slightly and you feel a click. I’m going to need you and Keyleth to make Dexterity saving throws to avoid the fireball blasting out of the lock.”</li></ol></li></ol><p>Keep in mind that the caller is not a leader or a dictator. The other players tell the caller what to say, not the other way around.</p><p>If you want to learn more about callers and why they’re cool, check out this article.</p><p>It might also be a good idea for the party to keep maps of the areas they explore. But y’all don’t need me to tell you how to make flowcharts.</p><h2 class="">Roleplaying</h2><p>The final pillar of D&amp;D is taking on the role of a daring adventurer!</p><p>When having in-character conversations with other players or with NPCs, you don’t have to talk as your character if you don’t want to. Any of these ways of communicating your character’s thoughts are fine:</p><ul><li>Speaking in character.<ul><li>“Now hold on, no one here wants more violence. How about we donate 10 gold, just because we appreciate what you do for the community.”</li></ul></li><li>Narrating in first person.<ul><li>“I’m going to offer the thug 10 gold to bribe him to not fight us.”</li></ul></li><li>Narrating in third person.<ul><li>“Pike is going to try to bribe the thug with 10 gold.”</li></ul></li></ul><h2 class="">House Rules</h2><p>Mostly, we’ll be using vanilla 5e D&amp;D, but there’s a number of house rules that are different from what the book says. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#House%20Rules">Here's</a> a tiddler with all of them. You don’t have to read the whole thing if you don’t want to, but it would probably be good to be familiar with the XP and inventory rules at least.
+</p></div>
+</div>
+</a><a name="House Rules">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="House Rules" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">House Rules</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 9th April 2023 at 11:21am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><h2 class="">HP Rolling</h2><p>At first level, take the maximum die value (as normal). On subsequent levels, you may choose to either take the average value or roll for hit points. However, if you choose to roll and get a value lower than the average, you’re stuck with it, so be careful.</p><h2 class="">XP for Gold</h2><p>Instead of gaining XP for killing monsters or accomplishing objectives, you gain XP when you spend gold on something not directly related to adventuring. For instance, a barbarian could spend gold carousing, or a cleric could donate the money to a local orphanage. XP is gained at a rate of 1 XP = 1 Gold.</p><p>Some examples of prices:</p><ul><li>Build a little cottage - 900g<ul><li>Throw the world’s greatest party</li><li>Upgrade your adventurer equipment to look as cool as possible</li><li>Get your name mentioned in the newsletter of your favorite charity</li></ul></li><li>Build a respectable house - 13,000g<ul><li>Start a hole-in-the-wall tavern</li><li>Start a farm</li><li>Build a cozy chapel</li></ul></li><li>Build a mansion - 33,000g<ul><li>Start a respectable business</li><li>Make a university donation that gets a building named after you</li><li>Build a fancy temple</li></ul></li><li>Start your own settlement - 50,400g<ul><li>Found an adventurer’s organization</li><li>Start a spy network</li><li>Fund a political movement</li></ul></li></ul><h2 class="">Inventory</h2><p>We are using a simplified inventory management system that rates items by their size in ‘bulk’ rather than by weight. A ‘slot’ represents the amount of stuff you can comfortably hold in one hand. It takes 1 ‘slot’ to carry an item with 1 ‘bulk’.</p><p>Your base inventory size in slots and your base bulk are based on your size:</p><ul><li>Small: 14 base slots; 10 minimum bulk</li><li>Medium: 18 base slots; 20 minimum bulk</li></ul><p>You also gain (or lose) a number of slots equal to your strength modifier. The final number you get is your inventory size.</p><p>Your bulk is the number of slots it takes someone else to carry you in their inventory. This is the greater of your minimum bulk and the total bulk of your inventory.</p><p>You are considered “encumbered” when you are carrying more than your inventory size. While encumbered, your speed is halved and you have disadvantage on ability checks, attack rolls, and saving throws made with any physical ability scores.</p><p>The absolute maximum you can carry is 1.5 times your inventory size.</p><p>Clothing or armor takes up half its inventory space (rounded down) when worn by a proficient wearer. It takes up its full inventory space if its wearer is not proficient.</p><p>Examples of item bulk are shown below.</p><ul><li>Light armor: 3 bulk</li><li>Medium armor: 6 bulk</li><li>Heavy armor: 9 bulk</li><li>Shield: 2 bulk</li><li>Dagger: 1 bulk</li><li>Shortsword: 2 bulk</li><li>Longsword: 3 bulk</li><li>Food and water ration for 1 day: 1 bulk</li><li>100 coins (any type): 1 bulk</li><li>1 ring: 1/5 bulk</li><li>1 candle: 1/5 bulk</li><li>1 torch: 1 bulk</li><li>1 vial (potion or poison): 1 bulk</li><li>Toolkits of all types: 1 bulk</li><li>Packs of all types: 3 bulk</li></ul></div>
+</div>
+</a><a name="Dannore's General Goods">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Dannore's General Goods" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Dannore's General Goods</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 5:27pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p><em>Good to see you again, friend. What can I do for you?</em></p><hr><p>Sells all nonmagical adventuring supplies.</p></div>
+</div>
+</a><a name="Amelia's Smithy">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Amelia's Smithy" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Amelia's Smithy</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 26th February 2023 at 12:34pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p><em>Hey, good to see you're still alive! Did you bring me interesting new things to blow up? That last explosion was an accident, but I think I've worked out how to do it on purpose!</em></p><hr><p>Sells:</p><p><ul>
+<li>All nonmagical weapons and armor</li>
+
+
+<li>All Renaissance firearms</li>
+
+
+</ul></p></div>
+</div>
+</a><a name="Raimund's Alchemy Shop">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Raimund's Alchemy Shop" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Raimund's Alchemy Shop</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 26th February 2023 at 12:46pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p><em>Ah, hello adventurers. Always my best customers. Now, do you all need some healing potions, or is there something more... interesting that I can do for you?</em></p><hr><p>Sells:
+<ul>
+<li>Potion of Healing (50g)</li>
+<li>Antitoxin (vial) (50g)</li>
+<li>Alchemist's Fire (flask) (50g)</li>
+
+
+
+</ul>
+</p></div>
+</div>
+</a><a name="Elanil's Magic Shop">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Elanil's Magic Shop" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Elanil's Magic Shop</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 26th February 2023 at 1:02pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p><em>Good morning, dearie. You wouldn't mind taking that parchment off the drying rack over there, would you? Very good, thank you, really, you can just put it right there. And I suppose you wouldn't mind fetching my scribing supplies, would you? The lavender box on the shelf. Yes, thank you dear, you're always a joy.</em></p><p><em>...</em></p><p><em>It's quite rude to just stand there and clear your throat at people, you know.</em></p><p><em>Oh! You wanted to buy something. Why didn't you say so? It's quite rude to waste people's time, you know.</em></p><hr><p>Sells:</p><p><ul>
+<li>Spell Scroll Level 0 (10g)</li>
+
+
+<li>Spell Scroll Level 1 (60g)</li>
+
+<li>Spell Scroll Level 2 (120g)</li>
+
+
+</ul></p></div>
+</div>
+</a><a name="Orinne's Tagboard">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Orinne's Tagboard" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Orinne's Tagboard</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 3:28pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p><em>Ah, hello, I didn't see you there. Come in, please! I've organized all the snippets you've brought me over there, feel free to take a look at your leisure. Just don't touch anything in that pile or... that pile, got it?</em></p><hr><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Agricultural%20Best%20Practices%20for%20Skybridge%2FCollected">Agricultural Best Practices for Skybridge/Collected</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Final%20report%20from%206.3%20barricade%20to%206.3%20tower%2FCollected">Final report from 6.3 barricade to 6.3 tower/Collected</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#History%20of%20the%20Torchbearers%2FCollected">History of the Torchbearers/Collected</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Skybridge%20Survival%20Manual%2FCollected">Skybridge Survival Manual/Collected</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#The%20Tale%20of%20Chandra%2FCollected">The Tale of Chandra/Collected</a></li></ul></p></div>
+</div>
+</a><a name="Gregory's Monster File">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Player%20Utility" data-tags="[[Player Utility]]" data-tiddler-title="Gregory's Monster File" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Gregory's Monster File</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 5:15pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Player Utility"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Player Utility</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p><em>Oh, right, you wanted to see the file. Let's see, where did it get to; I just had it out... Oh, yeah, that's it right there! Just set it down anywhere when you're done with it.</em></p><hr><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Bloated%20Glutton">Bloated Glutton</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Bridger%20Knight%20Spirit">Bridger Knight Spirit</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Elder%20Red%20Slaad">Elder Red Slaad</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Gluttonous%20Berserker">Gluttonous Berserker</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Gluttonous%20Maw">Gluttonous Maw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Neiven's%20Shade">Neiven's Shade</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Spore%20Bloom">Spore Bloom</a></li></ul></p></div>
+</div>
+</a><a name="Agricultural Best Practices for Skybridge/Collected">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Agricultural Best Practices for Skybridge/Collected" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Agricultural Best Practices for Skybridge/Collected</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 3:26pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>Becase of the previous agricultural spoke losses, the governor's office has decreed that the final platform of each agricultural spoke will be converted to a military base. Each will have a fabricator, emergency food supply, and barracks installed.</p><p>– (4/7)</p><p>Best practice is to rotate crops throughout the three usable platforms of a spoke year-by-year, to preserve soil quality. We only have the soil that Avandra has given us, we must not carelessly waste it.</p><p>– (5/7)</p><p>The magical apparatus that keep the lighthouses lit are distributed throughout the lighthouse tower, but the first place to look when there is a problem with a lighthouse is the top. The most touchy elements are found there.</p><p>– (6/7)</p><p>In an emergency, the upper surface of a military agg platform can be used to farm, but it must be stressed that this is not a sustainable solution. With careful management and a small enough population, however, a military agg platform could be independent for centries.</p><p>– (7/7)</p></div>
+</div>
+</a><a name="Final report from 6.3 barricade to 6.3 tower/Collected">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Final report from 6.3 barricade to 6.3 tower/Collected" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Final report from 6.3 barricade to 6.3 tower/Collected</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 3:26pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>Allied force evaluation: Our remaining forces consist of the 47th infantry and the 4th magical division. The 47th is at half strength. We have two remaining archmagi, Neiven and Elanil. We expect no reinforcements from any source.</p><p>– (2/7)</p><p>Enemy force evaluation: The enemy posesses unknown numbers, but they certainly outnumber us by at least 3:1. Augmenting the enemy's forces are all the plants in the Barrier Forest, including the guardian dragon.</p><p>– (3/7)</p><p>Actions to be completed: Elanil, as the mage that created the Barrier Forest, has been tasked with bringing it, and the guardian dragon, back under Skybridge control. We have begun disassembling machinery from agg spoke 6 to build more traps.</p><p>– (5/7)</p><p>Ultimate likelihood of success: Low to none. Offensive action is doomed to failure. Hadriel's Barrier will save the civilians, if it comes up in time, but there will be no saving us. We will hold as long as we can. May all of our souls be honored in Avandra's halls.</p><p>– (7/7)</p></div>
+</div>
+</a><a name="History of the Torchbearers/Collected">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="History of the Torchbearers/Collected" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">History of the Torchbearers/Collected</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 3:26pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>We fled from the light of the Upper Astral because our extinction haunted us there. But in the night of the Lower Astral, another death waited for us. Small creatures crunching on corpses and commanding their spirits against us, chaotic raiders from beyond reality, and worse.</p><p>– (2/6)</p></div>
+</div>
+</a><a name="Skybridge Survival Manual/Collected">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Skybridge Survival Manual/Collected" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Skybridge Survival Manual/Collected</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 3:26pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>I don't know if anyone is going to read this. They say there's some sort of plan, to get behind an invincible barrier. Sounds like a fantasy to me, but who am I to judge where people get their hope? I'm just hopeful this little book will help someone someday.</p><p>– (1/7)</p><p>Our old frenemies the Githyanki decided that all of us being eaten was a great excuse to take over the city. Watch out for real teamwork and tactics if you end up on the wrong side of their swords. I heard they've set up shop in the old Knight Halls.</p><p>– (4/7)</p></div>
+</div>
+</a><a name="The Tale of Chandra/Collected">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="The Tale of Chandra/Collected" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">The Tale of Chandra/Collected</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 3:26pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>Chandra was still small during the first breakthrough. Her arms were weak when flashing teeth and thrashing limbs tore apart the brave Bridger barricade and spilled across the seventh spoke. Her scream was reedy and small when her closest friend was torn apart before her eyes.</p><p>– (2/7)</p><p>Chandra wore the burning tree of the Torchbearers on her squire's tabbard, then later on her knight's breastplate. What else was she supposed to do? The Torchbearers were the bastions of light against the endless night through which Skybridge sailed.</p><p>– (3/7)</p><p>The dreams of Skybridge began to sour. Images of slaughter haunted the nightmares of every citizen. The scholars knew what was coming. The Void Whisperer drew near. The captain of Hunger. The Hope Eater. With each step, it stole Skybridge's future.</p><p>– (4/7)</p><p>Chandra sacrificed her life to push back Hunger, crippling its Captain the Void Whisperer, while behind her thousands fled to safety. In these dark days, we must not forget that we are still beloved of Avandra. The flame of heroism still burns in Skybridge. We will survive.</p><p>– (7/7)</p></div>
+</div>
+</a><a name="Bloated Glutton">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Monster tc-tagged-Rubble-Choked%20Farms" data-tags="Monster [[Rubble-Choked Farms]]" data-tiddler-title="Bloated Glutton" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Bloated Glutton</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 6th March 2023 at 1:05pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Monster"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Monster</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Rubble-Choked Farms"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#e01b24;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Rubble-Choked Farms</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"></div>
+<p>
+<p><label class="tc-checkbox  tc-checkbox-checked"><input checked="true" type="checkbox"><span> Collected</span></label></p>
+</p><p>Mentions:</p><p><ul class=""></ul></p><table><tbody><tr class="evenRow"><th>Tier</th><td>Apprentice</td></tr><tr class="oddRow"><th>Organization</th><td>paragon</td></tr><tr class="evenRow"><th>Randomly Encountered</th><td>false</td></tr></tbody></table><embed src="https://drive.google.com/file/d/1J1V7512NgFttmTOTn_qHoxJhcaiHnMH6/preview"></div>
+</a><a name="Bridger Knight Spirit">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Monster tc-tagged-Undead tc-tagged-Rubble-Choked%20Farms" data-tags="Monster Undead [[Rubble-Choked Farms]]" data-tiddler-title="Bridger Knight Spirit" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Bridger Knight Spirit</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 5:09pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Monster"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Monster</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Rubble-Choked Farms"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#e01b24;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Rubble-Choked Farms</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Undead"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#1c71d8;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Undead</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"></div>
+<p>
+<p><label class="tc-checkbox  tc-checkbox-checked"><input checked="true" type="checkbox"><span> Collected</span></label></p>
+</p><p>Mentions:</p><p><ul class=""></ul></p><table><tbody><tr class="evenRow"><th>Tier</th><td>Apprentice</td></tr><tr class="oddRow"><th>Organization</th><td>group</td></tr><tr class="evenRow"><th>Randomly Encountered</th><td>true</td></tr></tbody></table><embed src="https://drive.google.com/file/d/1S6njkKy2nI5S10VyLcdcc9bsC8a--r4q/preview"></div>
+</a><a name="Elder Red Slaad">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Monster tc-tagged-Slaad tc-tagged-The%20Neighborhoods" data-tags="Monster Slaad [[The Neighborhoods]]" data-tiddler-title="Elder Red Slaad" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Elder Red Slaad</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 4th February 2023 at 3:36pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Monster"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Monster</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Slaad"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#1c71d8;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Slaad</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="The Neighborhoods"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#ed333b;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">The Neighborhoods</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"></div>
+<p>
+<p><label class="tc-checkbox  tc-checkbox-checked"><input checked="true" type="checkbox"><span> Collected</span></label></p>
+</p><p>Mentions:</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Ground%20Floor%20Dining%20Area">Ground Floor Dining Area</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Keep%20Away">Keep Away</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Long%20Road%20to%20Burn">Long Road to Burn</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Performance%20Stage">Performance Stage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Todo%20List">Todo List</a></li></ul></p><table><tbody><tr class="evenRow"><th>Tier</th><td>Journeyman</td></tr><tr class="oddRow"><th>Organization</th><td>paragon</td></tr><tr class="evenRow"><th>Randomly Encountered</th><td>false</td></tr></tbody></table><embed src="https://drive.google.com/file/d/1P0r2Vm3T2oKSe4IYQ57VUj_lWS23jtFH/preview"></div>
+</a><a name="Gluttonous Berserker">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Monster" data-tags="Monster" data-tiddler-title="Gluttonous Berserker" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Gluttonous Berserker</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 22nd February 2023 at 11:19am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Monster"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Monster</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"></div>
+<p>
+<p><label class="tc-checkbox  tc-checkbox-checked"><input checked="true" type="checkbox"><span> Collected</span></label></p>
+</p><p>Mentions:</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Shrine%20of%20Hunger">Shrine of Hunger</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Stop%20the%20Smash">Stop the Smash</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#The%20Skywalks">The Skywalks</a></li></ul></p><table><tbody><tr class="evenRow"><th>Tier</th><td>Apprentice</td></tr><tr class="oddRow"><th>Organization</th><td>pair</td></tr><tr class="evenRow"><th>Randomly Encountered</th><td>false</td></tr></tbody></table><embed src="https://drive.google.com/file/d/11BW1WwtzwOwsuj68x1UewyIp43JipcMD/preview"></div>
+</a><a name="Gluttonous Maw">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Monster" data-tags="Monster" data-tiddler-title="Gluttonous Maw" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Gluttonous Maw</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 22nd February 2023 at 11:18am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Monster"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Monster</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"></div>
+<p>
+<p><label class="tc-checkbox  tc-checkbox-checked"><input checked="true" type="checkbox"><span> Collected</span></label></p>
+</p><p>Mentions:</p><p><ul class=""></ul></p><table><tbody><tr class="evenRow"><th>Tier</th><td>Apprentice</td></tr><tr class="oddRow"><th>Organization</th><td>gang</td></tr><tr class="evenRow"><th>Randomly Encountered</th><td>true</td></tr></tbody></table><embed src="https://drive.google.com/file/d/1sBKQKNB_wnlc0dTwo4txPW0eUSBy-7qv/preview"></div>
+</a><a name="Neiven's Shade">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Monster tc-tagged-Undead tc-tagged-Rubble-Choked%20Farms" data-tags="Monster Undead [[Rubble-Choked Farms]]" data-tiddler-title="Neiven's Shade" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Neiven's Shade</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th February 2023 at 5:08pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Monster"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Monster</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Rubble-Choked Farms"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#e01b24;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Rubble-Choked Farms</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Undead"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#1c71d8;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Undead</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"></div>
+<p>
+<p><label class="tc-checkbox  tc-checkbox-checked"><input checked="true" type="checkbox"><span> Collected</span></label></p>
+</p><p>Mentions:</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Final%20report%20from%206.3%20barricade%20to%206.3%20tower">Final report from 6.3 barricade to 6.3 tower</a></li></ul></p><table><tbody><tr class="evenRow"><th>Tier</th><td>Apprentice</td></tr><tr class="oddRow"><th>Organization</th><td>paragon</td></tr><tr class="evenRow"><th>Randomly Encountered</th><td>false</td></tr></tbody></table><embed src="https://drive.google.com/file/d/1momj-ImAcm19vQ5_tndN-NuszajxkoO_/preview"></div>
+</a><a name="Spore Bloom">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Monster tc-tagged-Plant tc-tagged-Rubble-Choked%20Farms" data-tags="Monster Plant [[Rubble-Choked Farms]]" data-tiddler-title="Spore Bloom" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"></button><button aria-label="close others" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose-others" title="Close other tiddlers"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Spore Bloom</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href="#"></a> 19th March 2023 at 7:36pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Monster"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#303030;
+color:#303030;">Monster</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Plant"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#1c71d8;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Plant</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Rubble-Choked Farms"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#e01b24;
+fill:rgba(255, 255, 255, 0.7);
+color:rgba(255, 255, 255, 0.7);">Rubble-Choked Farms</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"></div>
+<p>
+<p><label class="tc-checkbox  tc-checkbox-checked"><input checked="true" type="checkbox"><span> Collected</span></label></p>
+</p><p>Mentions:</p><p><ul class=""></ul></p><table><tbody><tr class="evenRow"><th>Tier</th><td>Apprentice</td></tr><tr class="oddRow"><th>Organization</th><td>pair</td></tr><tr class="evenRow"><th>Randomly Encountered</th><td>true</td></tr></tbody></table><embed src="https://drive.google.com/file/d/1RP4zzk2saIBOeyvucIm0a5tj4tonjOv9/preview"></div>
+</a>
+</section>
+</body>
+</html>
